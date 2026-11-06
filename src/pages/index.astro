@@ -16,7 +16,16 @@ const features = [
   ['GUIDE','Spray contact électrique : comment choisir ?','Usages, séchage, résidus et compatibilité avec les connexions.','/guides/spray-contact-electrique-comment-choisir/','https://images.pexels.com/photos/32282232/pexels-photo-32282232.jpeg?auto=compress&fit=crop&w=1000&q=84','Batterie automobile et connexions électriques']
 ];
 
-const brands = ['GRAFEN','WD-40','Bardahl','Würth','Motul','Liqui Moly','CRC','Loctite'];
+const brands = [
+  ['GRAFEN','grafen'],
+  ['WD-40','wd-40'],
+  ['Bardahl','bardahl'],
+  ['Würth','wurth'],
+  ['Motul','motul'],
+  ['LIQUI MOLY','liqui-moly'],
+  ['CRC','crc'],
+  ['Loctite','loctite']
+];
 ---
 <BaseLayout
   title="AtelierComparatif.fr — Guides, tests et comparatifs pour l’atelier"
@@ -144,7 +153,7 @@ const brands = ['GRAFEN','WD-40','Bardahl','Würth','Motul','Liqui Moly','CRC','
         </div>
       </div>
       <div class="brand-grid">
-        {brands.map((brand) => <a href="/marques/">{brand}</a>)}
+        {brands.map(([brand,slug]) => <a href={'/marques/' + slug + '/'}>{brand}</a>)}
       </div>
     </div>
   </section>
