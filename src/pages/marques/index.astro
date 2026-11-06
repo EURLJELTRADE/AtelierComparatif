@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const brands = [
-  ['GRAFEN','Produits techniques pour l’entretien, le nettoyage, la lubrification et la maintenance.','Nettoyants frein, dégrippants, contacts, frein-filets'],
-  ['WD-40','Marque connue pour ses produits multifonctions et ses gammes spécialisées.','Multifonctions, dégrippants, moto, lubrification'],
-  ['Bardahl','Marque présente dans l’entretien automobile, les additifs et les produits techniques.','Entretien auto, nettoyage, additifs'],
-  ['Würth','Gamme professionnelle très large pour l’automobile, l’industrie et l’atelier.','Nettoyants, lubrifiants, chimie atelier'],
-  ['Motul','Marque fortement implantée dans les lubrifiants et l’entretien auto-moto.','Lubrifiants, entretien moto, nettoyants'],
-  ['Liqui Moly','Spécialiste allemand des lubrifiants, additifs et produits d’entretien.','Huiles, additifs, entretien'],
-  ['CRC','Marque orientée maintenance, nettoyage et protection technique.','Nettoyants, maintenance, protection'],
-  ['Loctite','Référence des adhésifs techniques, étanchéité et assemblages filetés.','Frein-filets, adhésifs, étanchéité']
+  ['GRAFEN Professional','grafen','Produits techniques pour l’entretien, le nettoyage, la lubrification et la maintenance.','Nettoyants frein, dégrippants, contacts, frein-filets'],
+  ['WD-40','wd-40','Marque connue pour ses produits multifonctions et ses gammes spécialisées.','Multifonctions, dégrippants, moto, lubrification'],
+  ['Bardahl','bardahl','Marque présente dans l’entretien automobile, les additifs et les produits techniques.','Entretien auto, nettoyage, additifs'],
+  ['Würth','wurth','Gamme professionnelle très large pour l’automobile, l’industrie et l’atelier.','Nettoyants, lubrifiants, chimie atelier'],
+  ['Motul','motul','Marque fortement implantée dans les lubrifiants et l’entretien auto-moto.','Lubrifiants, entretien moto, nettoyants'],
+  ['LIQUI MOLY','liqui-moly','Spécialiste allemand des lubrifiants, additifs et produits d’entretien.','Huiles, additifs, entretien'],
+  ['CRC Industries','crc','Marque orientée maintenance, nettoyage et protection technique.','Nettoyants, maintenance, protection'],
+  ['Loctite','loctite','Référence des adhésifs techniques, étanchéité et assemblages filetés.','Frein-filets, adhésifs, étanchéité']
 ];
 ---
 <BaseLayout title="Marques de produits auto et atelier | AtelierComparatif.fr" description="Retrouvez les principales marques de produits d’entretien automobile, mécanique et atelier analysées selon des critères homogènes.">
@@ -18,15 +18,15 @@ const brands = [
     <h1>Comparer les marques sans parti pris.</h1>
     <p class="lead">AtelierComparatif analyse des fabricants connus du marché auto, moto, maintenance et atelier. Une marque n’est jamais considérée meilleure par principe : nous comparons les références, les usages et la documentation disponible.</p>
     <div class="brand-directory-grid">
-      {brands.map(([name,desc,scope]) => (
-        <article class="brand-directory-card">
+      {brands.map(([name,slug,desc,scope]) => (
+        <a class="brand-directory-card" href={'/marques/' + slug + '/'}>
           <div class="brand-monogram">{name.slice(0,2).toUpperCase()}</div>
           <div>
             <h2>{name}</h2>
             <p>{desc}</p>
             <small>{scope}</small>
           </div>
-        </article>
+        </a>
       ))}
     </div>
 
