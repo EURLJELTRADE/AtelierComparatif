@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const comparatifs = await getCollection('comparatifs');
+  return comparatifs.map((item) => ({
+    params: { id: item.id },
+    props: { item }
+  }));
+}
+
+const { item } = Astro.props;
+const { Content, headings } = await render(item);
+const url = new URL('/comparatifs/' + item.id + '/', Astro.site);
+const published = item.data.date.toISOString();
+const modified = (item.data.updated ?? item.data.date).toISOString();
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: item.data.title,
+  description: item.data.description,
+  datePublished: published,
+  dateModified: modified,
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: url.toString(),
+  image: item.data.image ? [item.data.image] : undefined,
+  publisher: {
+    '@type': 'Organization',
+    name: 'AtelierComparatif.fr',
+    url: 'https://ateliercomparatif.fr/'
+  }
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://ateliercomparatif.fr/' },
+    { '@type': 'ListItem', position: 2, name: 'Comparatifs', item: 'https://ateliercomparatif.fr/comparatifs/' },
+    { '@type': 'ListItem', position: 3, name: item.data.title, item: url.toString() }
+  ]
+};
+---
+<BaseLayout
+  title={item.data.seoTitle ?? item.data.title}
+  description={item.data.description}
+  canonical={'/comparatifs/' + item.id + '/'}
+  image={item.data.image}
+  type="article"
+  jsonLd={[articleLd, breadcrumbLd]}
+>
+  <article class="article-page">
+    <div class="wrap article-wrap">
+      <nav class="breadcrumbs" aria-label="Fil d’Ariane">
+        <a href="/">Accueil</a><span>›</span><a href="/comparatifs/">Comparatifs</a><span>›</span><span>{item.data.category}</span>
+      </nav>
+
+      <header class="article-header">
+        <div class="section-kicker">{item.data.category}</div>
+        <h1>{item.data.title}</h1>
+        <p class="article-excerpt">{item.data.excerpt}</p>
+        <div class="article-meta">
+          <span>{item.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          <span>•</span>
+          <span>{item.data.readingTime} de lecture</span>
+        </div>
+        {item.data.methodology && <div class="method-note"><strong>Méthodologie :</strong> {item.data.methodology}</div>}
+      </header>
+
+      {item.data.image && (
+        <figure class="article-cover">
+          <img src={item.data.image} alt={item.data.imageAlt ?? item.data.title} width="1400" height="900" />
+        </figure>
+      )}
+
+      <div class="article-layout">
+        <div class="article-content"><Content /></div>
+        <aside class="article-toc">
+          <strong>Dans ce comparatif</strong>
+          <nav>{headings.filter((h) => h.depth === 2).map((h) => <a href={'#' + h.slug}>{h.text}</a>)}</nav>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
