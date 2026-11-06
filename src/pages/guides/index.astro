@@ -1,6 +1,31 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const guides = (await getCollection('guides')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 <BaseLayout title="Guides produits d’entretien et atelier | AtelierComparatif.fr" description="Guides pratiques pour comprendre et choisir les produits d’entretien automobile, mécanique et atelier.">
-<section class="section"><div class="wrap"><div class="eyebrow">Guides</div><h1 style="font-size:48px">Comprendre avant de choisir.</h1><p class="lead">Nettoyants, lubrifiants, produits électriques, frein-filets et consommables : nos guides expliquent les usages, les différences et les précautions.</p></div></section>
+  <section class="section guide-index">
+    <div class="wrap">
+      <div class="section-kicker">Guides</div>
+      <h1>Comprendre avant de choisir.</h1>
+      <p class="lead">Nettoyants, lubrifiants, produits électriques, frein-filets et consommables : nos guides expliquent les usages, les différences et les précautions.</p>
+
+      <div class="guide-list">
+        {guides.map((guide) => (
+          <a class="guide-list-card" href={'/guides/' + guide.id + '/'}>
+            {guide.data.image && <img src={guide.data.image} alt={guide.data.imageAlt ?? guide.data.title} width="720" height="480" loading="lazy" />}
+            <div>
+              <span class="guide-type">{guide.data.category}</span>
+              <h2>{guide.data.title}</h2>
+              <p>{guide.data.excerpt}</p>
+              <small>{guide.data.readingTime} de lecture</small>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>
