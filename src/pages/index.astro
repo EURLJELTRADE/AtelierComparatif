@@ -7,14 +7,15 @@ const categories = [
   ['Frein-filets','Choisir la bonne résistance et le bon usage.','/comparatifs/']
 ];
 const features = [
-  ['Guide','Nettoyant frein : lequel choisir ?','Les critères essentiels pour comparer formats, séchage, résidus et usage professionnel.','/guides/'],
-  ['Comparatif','WD-40 ou dégrippant professionnel ?','Comprendre les différences entre produit multifonction et dégrippant spécialisé.','/comparatifs/'],
-  ['Guide','Nettoyant contact électrique : comment choisir ?','Compatibilité, séchage, résidus et bonnes pratiques pour l’atelier.','/guides/']
+  ['Guide','Nettoyant frein : lequel choisir ?','Les critères essentiels pour comparer formats, séchage, résidus et usage professionnel.','/guides/','https://images.pexels.com/photos/6870299/pexels-photo-6870299.jpeg?auto=compress&fit=crop&w=900&q=82','Mécanicien intervenant sur un disque de frein'],
+  ['Guide','Nettoyant moteur : quels produits utiliser ?','Choisir un produit adapté aux pièces moteur, aux graisses et aux matériaux environnants.','/guides/','https://images.pexels.com/photos/29181490/pexels-photo-29181490/free-photo-of-mechanic-working-on-engine-in-a-workshop.jpeg?auto=compress&fit=crop&w=900&q=82','Mécanicien travaillant sur un moteur en atelier'],
+  ['Conseil','Les produits indispensables dans un atelier','Construire une sélection cohérente de nettoyants, lubrifiants et consommables pour la maintenance.','/conseils-atelier/','https://images.pexels.com/photos/28641472/pexels-photo-28641472/free-photo-of-automotive-workshop-tools-and-equipment-setup.jpeg?auto=compress&fit=crop&w=900&q=82','Outillage et équipements dans un atelier automobile']
 ];
 ---
 <BaseLayout
   title="AtelierComparatif.fr — Guides, tests et comparatifs pour l’atelier"
   description="Comparez les produits d’entretien automobile et d’atelier : nettoyants frein, dégrippants, nettoyants contact, frein-filets et plus encore."
+  image="https://images.pexels.com/photos/3855223/pexels-photo-3855223.jpeg?auto=compress&fit=crop&w=1600&q=82"
 >
   <section class="hero">
     <div class="wrap hero-grid">
@@ -27,15 +28,12 @@ const features = [
           <a class="btn btn-dark" href="/guides/">Consulter les guides</a>
         </div>
       </div>
-      <aside class="hero-card">
-        <div class="eyebrow" style="color:#f4b61c">Notre approche</div>
-        <h2 style="font-size:30px;margin:10px 0 8px">Comparer avant d’acheter.</h2>
-        <ul>
-          <li>Critères techniques expliqués simplement</li>
-          <li>Comparaison de plusieurs marques</li>
-          <li>Usages professionnels et particuliers</li>
-          <li>Limites et précautions clairement indiquées</li>
-        </ul>
+      <aside class="hero-visual">
+        <img src="https://images.pexels.com/photos/3855223/pexels-photo-3855223.jpeg?auto=compress&fit=crop&w=1200&q=82" alt="Mécanicien sélectionnant des outils dans un atelier automobile" width="1200" height="800" fetchpriority="high" />
+        <div class="hero-overlay">
+          <strong>Comparer avant d’acheter.</strong>
+          <span>Des critères techniques expliqués simplement.</span>
+        </div>
       </aside>
     </div>
   </section>
@@ -56,7 +54,7 @@ const features = [
       <div class="eyebrow">À la une</div>
       <h2>Premiers dossiers</h2>
       <div class="grid">
-        {features.map(([tag,title,text,href]) => <article class="card"><div class="tag">{tag}</div><h3>{title}</h3><p>{text}</p><a href={href} style="font-weight:800;color:var(--orange)">Découvrir →</a></article>)}
+        {features.map(([tag,title,text,href,img,alt]) => <article class="card editorial-card"><img class="card-image" src={img} alt={alt} width="900" height="600" loading="lazy" /><div class="card-body"><div class="tag">{tag}</div><h3>{title}</h3><p>{text}</p><a href={href} style="font-weight:800;color:var(--orange)">Découvrir →</a></div></article>)}
       </div>
     </div>
   </section>
