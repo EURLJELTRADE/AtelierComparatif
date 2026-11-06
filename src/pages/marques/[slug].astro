@@ -96,8 +96,15 @@ const breadcrumbLd = {
         </section>
 
         <aside class="source-note">
-          <strong>À propos des sources</strong>
+          <strong>Sources officielles</strong>
           <p>Les éléments historiques sont issus en priorité des pages corporate et documents officiels des fabricants. Les visuels produits servent à identifier les packagings et restent la propriété de leurs marques respectives.</p>
+          {brand.sources?.length > 0 && (
+            <ul class="official-sources">
+              {brand.sources.map((source) => (
+                <li><a href={source.url} rel="nofollow noopener" target="_blank">{source.label} ↗</a></li>
+              ))}
+            </ul>
+          )}
         </aside>
       </div>
     </div>

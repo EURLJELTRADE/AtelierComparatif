@@ -24,7 +24,8 @@ export const brands = {
     ],
     ranges: ["Produit multifonction", "Dégrippants et pénétrants", "Lubrifiants spécialisés", "Nettoyants et dégraissants", "Nettoyants contacts", "Produits vélo et maintenance"],
     positioning: "WD-40 occupe une position particulière : la marque est à la fois grand public, professionnelle et industrielle. Son produit historique reste extrêmement polyvalent, tandis que la gamme Specialist répond à des usages plus techniques.",
-    links: ["/guides/degrippant-comment-choisir/","/comparatifs/degrippant-multifonction-vs-specialise/","/guides/spray-contact-electrique-comment-choisir/"]
+    links: ["/guides/degrippant-comment-choisir/","/comparatifs/degrippant-multifonction-vs-specialise/","/guides/spray-contact-electrique-comment-choisir/"],
+    sources: [{"label":"WD-40 Company — Our History","url":"https://wd40company.com/our-company/our-history/"}]
   },
   "bardahl": {
     name: "Bardahl",
@@ -50,7 +51,8 @@ export const brands = {
     ],
     ranges: ["Nettoyants frein", "Additifs moteur", "Lubrifiants", "Nettoyants moteur", "Traitements carburant", "Produits de maintenance"],
     positioning: "Bardahl se positionne à l’interface entre entretien courant, expertise mécanique et culture de la performance automobile.",
-    links: ["/guides/nettoyant-frein-lequel-choisir/","/guides/nettoyant-moteur-criteres-choix/","/guides/produits-indispensables-atelier/"]
+    links: ["/guides/nettoyant-frein-lequel-choisir/","/guides/nettoyant-moteur-criteres-choix/","/guides/produits-indispensables-atelier/"],
+    sources: [{"label":"Bardahl North America — Corporate History","url":"https://bardahl.com/about/corporate-history"}]
   },
   "wurth": {
     name: "Würth",
@@ -76,7 +78,8 @@ export const brands = {
     ],
     ranges: ["Nettoyants frein", "Dégrippants", "Lubrifiants", "Colles et mastics", "Outillage", "Fixation", "Équipements d’atelier"],
     positioning: "Würth vise clairement les professionnels. Sa force réside moins dans un produit unique que dans la profondeur de gamme, la disponibilité et l’écosystème de services.",
-    links: ["/comparatifs/nettoyants-frein-2026/","/guides/produits-indispensables-atelier/","/guides/aerosol-360-degres/"]
+    links: ["/comparatifs/nettoyants-frein-2026/","/guides/produits-indispensables-atelier/","/guides/aerosol-360-degres/"],
+    sources: [{"label":"Würth Group — History","url":"https://www.wuerth.com/wuerth-group/Company/History/History.php"},{"label":"Würth France — L'entreprise","url":"https://entreprise.wurth.fr/l-entreprise/"}]
   },
   "grafen": {
     name: "GRAFEN Professional",
@@ -102,7 +105,8 @@ export const brands = {
     ],
     ranges: ["Nettoyants frein", "Dégrippants multifonctions", "Nettoyants contacts", "Antirouille", "Lubrifiants", "Frein-filets", "Produits atelier"],
     positioning: "GRAFEN vise un positionnement professionnel avec un catalogue large et une forte logique de distribution B2B.",
-    links: ["/comparatifs/nettoyants-frein-2026/","/guides/degrippant-comment-choisir/","/guides/spray-contact-electrique-comment-choisir/"]
+    links: ["/comparatifs/nettoyants-frein-2026/","/guides/degrippant-comment-choisir/","/guides/spray-contact-electrique-comment-choisir/"],
+    sources: [{"label":"GRAFEN Professional — About us","url":"https://grafenprofessional.eu/en/about-us/"}]
   },
   "loctite": {
     name: "Loctite",
@@ -128,7 +132,8 @@ export const brands = {
     ],
     ranges: ["Frein-filets", "Étanchéité filetée", "Retenue cylindrique", "Cyanoacrylates", "Adhésifs structuraux", "Traitements de surface"],
     positioning: "Loctite est une marque technique de référence pour les assemblages industriels et mécaniques, avec une documentation particulièrement riche.",
-    links: ["/guides/produits-indispensables-atelier/","/tests/","/methodologie/"]
+    links: ["/guides/produits-indispensables-atelier/","/tests/","/methodologie/"],
+    sources: [{"label":"Loctite — About Loctite","url":"https://www.loctiteproducts.com/about-loctite.html"}]
   },
   "liqui-moly": {
     name: "LIQUI MOLY",
@@ -154,7 +159,8 @@ export const brands = {
     ],
     ranges: ["Huiles moteur", "Additifs", "Nettoyants frein", "Graisses", "Produits d’entretien", "Fluides techniques"],
     positioning: "LIQUI MOLY combine une image de spécialiste des lubrifiants avec une très large gamme de produits d’entretien et d’atelier.",
-    links: ["/guides/nettoyant-frein-lequel-choisir/","/guides/produits-indispensables-atelier/","/comparatifs/nettoyants-frein-2026/"]
+    links: ["/guides/nettoyant-frein-lequel-choisir/","/guides/produits-indispensables-atelier/","/comparatifs/nettoyants-frein-2026/"],
+    sources: [{"label":"LIQUI MOLY — Company history","url":"https://www.liqui-moly.com/en/us/company/about-us/company-history.html"}]
   },
   "motul": {
     name: "Motul",
@@ -180,7 +186,8 @@ export const brands = {
     ],
     ranges: ["Huiles moteur", "Lubrifiants moto", "MC Care", "Nettoyants frein", "Additifs", "Fluides techniques"],
     positioning: "Motul se distingue par une forte légitimité dans le sport mécanique et les lubrifiants, complétée par des gammes d’entretien automobile et moto.",
-    links: ["/comparatifs/nettoyants-frein-2026/","/guides/entretien-pneus-produit/","/guides/lubrifiant-chaine-comment-choisir/"]
+    links: ["/comparatifs/nettoyants-frein-2026/","/guides/entretien-pneus-produit/","/guides/lubrifiant-chaine-comment-choisir/"],
+    sources: [{"label":"Motul — Who we are","url":"https://www.motul.com/corporate/who-we-are"},{"label":"Motul France — Notre histoire","url":"https://www.motul.com/fr-FR/discover-motul/our-history"}]
   },
   "crc": {
     name: "CRC Industries",

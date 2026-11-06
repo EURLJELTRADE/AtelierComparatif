@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { topics } from '../../data/topics';
+
+export function getStaticPaths() {
+  return Object.entries(topics).map(([slug, topic]) => ({
+    params: { slug },
+    props: { slug, topic }
+  }));
+}
+
+const { slug, topic } = Astro.props;
+const guides = await getCollection('guides');
+const comparatifs = await getCollection('comparatifs');
+const contentMap = new Map([
+  ...guides.map((item) => ['/guides/' + item.id + '/', {title:item.data.title, excerpt:item.data.excerpt, href:'/guides/' + item.id + '/', type:item.data.category, image:item.data.image, imageAlt:item.data.imageAlt}]),
+  ...comparatifs.map((item) => ['/comparatifs/' + item.id + '/', {title:item.data.title, excerpt:item.data.excerpt, href:'/comparatifs/' + item.id + '/', type:item.data.category, image:item.data.image, imageAlt:item.data.imageAlt}])
+]);
+const items = topic.links.map((href) => contentMap.get(href)).filter(Boolean);
+---
+<BaseLayout title={topic.seoTitle} description={topic.description} canonical={'/dossiers/' + slug + '/'}>
+  <section class="section topic-page">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Fil d’Ariane">
+        <a href="/">Accueil</a><span>›</span><a href="/dossiers/">Dossiers</a><span>›</span><span>{topic.name}</span>
+      </nav>
+      <div class="section-kicker">Dossier</div>
+      <h1>{topic.name}</h1>
+      <p class="lead">{topic.intro}</p>
+      <div class="topic-grid">
+        {items.map((item) => (
+          <a class="topic-card" href={item.href}>
+            {item.image && <img src={item.image} alt={item.imageAlt ?? item.title} width="760" height="500" loading="lazy" />}
+            <div>
+              <span class="guide-type">{item.type}</span>
+              <h2>{item.title}</h2>
+              <p>{item.excerpt}</p>
+              <strong>Lire le contenu →</strong>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
