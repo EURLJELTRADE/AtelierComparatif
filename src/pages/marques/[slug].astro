@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { brands } from '../../data/brands';
+
+export function getStaticPaths() {
+  return Object.entries(brands).map(([slug, brand]) => ({
+    params: { slug },
+    props: { brand, slug }
+  }));
+}
+
+const { brand, slug } = Astro.props;
+const canonical = '/marques/' + slug + '/';
+const brandLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Brand',
+  name: brand.name,
+  url: new URL(canonical, Astro.site).toString()
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://ateliercomparatif.fr/' },
+    { '@type': 'ListItem', position: 2, name: 'Marques', item: 'https://ateliercomparatif.fr/marques/' },
+    { '@type': 'ListItem', position: 3, name: brand.name, item: new URL(canonical, Astro.site).toString() }
+  ]
+};
+---
+<BaseLayout title={brand.seoTitle} description={brand.description} canonical={canonical} image={brand.image} jsonLd={[brandLd,breadcrumbLd]}>
+  <article class="brand-page">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Fil d’Ariane">
+        <a href="/">Accueil</a><span>›</span><a href="/marques/">Marques</a><span>›</span><span>{brand.name}</span>
+      </nav>
+
+      <header class="brand-hero">
+        <div class="brand-hero-copy">
+          <div class="section-kicker">Histoire de marque</div>
+          <h1>{brand.name}</h1>
+          <p class="brand-intro">{brand.excerpt}</p>
+          <div class="brand-facts">
+            <span><strong>Origine</strong>{brand.country}</span>
+            <span><strong>Début</strong>{brand.founded}</span>
+          </div>
+        </div>
+        <figure class="brand-product">
+          <div class="brand-product-frame">
+            <img src={brand.image} alt={brand.imageAlt} width="800" height="800" loading="eager" />
+          </div>
+          <figcaption>{brand.imageCredit}</figcaption>
+        </figure>
+      </header>
+
+      <div class="brand-content">
+        <section>
+          <h2>Présentation de {brand.name}</h2>
+          <p>{brand.intro}</p>
+        </section>
+
+        <section>
+          <h2>Histoire de la marque</h2>
+          {brand.history.map((p) => <p>{p}</p>)}
+        </section>
+
+        <section class="brand-visual-history">
+          <div>
+            <div class="section-kicker">Identité</div>
+            <h2>Évolution visuelle et marquage des produits</h2>
+            {brand.visual.map((p) => <p>{p}</p>)}
+          </div>
+          <figure class="brand-inline-product">
+            <img src={brand.image} alt={brand.imageAlt} width="700" height="700" loading="lazy" />
+            <figcaption>Exemple de packaging actuel représentatif de {brand.name}.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>Les principales familles de produits</h2>
+          <div class="range-grid">
+            {brand.ranges.map((range) => <div class="range-pill">{range}</div>)}
+          </div>
+        </section>
+
+        <section>
+          <h2>Comment situer {brand.name} sur le marché ?</h2>
+          <p>{brand.positioning}</p>
+          <p>AtelierComparatif ne considère pas qu’une marque est meilleure par principe. Nous comparons les références produit par produit, en distinguant les données fabricants, notre analyse documentaire et les éventuels tests physiques.</p>
+        </section>
+
+        <section>
+          <h2>Guides et comparatifs liés</h2>
+          <div class="brand-related">
+            {brand.links.map((href) => <a href={href}>Consulter le dossier →</a>)}
+          </div>
+        </section>
+
+        <aside class="source-note">
+          <strong>À propos des sources</strong>
+          <p>Les éléments historiques sont issus en priorité des pages corporate et documents officiels des fabricants. Les visuels produits servent à identifier les packagings et restent la propriété de leurs marques respectives.</p>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
