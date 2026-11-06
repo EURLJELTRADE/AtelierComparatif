@@ -6,7 +6,8 @@ const {
   canonical,
   image,
   type = 'website',
-  jsonLd = []
+  jsonLd = [],
+  robots = 'index,follow,max-image-preview:large'
 } = Astro.props;
 const canonicalUrl = canonical ? new URL(canonical, Astro.site) : new URL(Astro.url.pathname, Astro.site);
 const org = {
@@ -30,7 +31,7 @@ const website = {
   <meta name="viewport" content="width=device-width" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="robots" content={robots} />
   <link rel="canonical" href={canonicalUrl} />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content={type} />
