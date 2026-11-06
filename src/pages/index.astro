@@ -7,9 +7,9 @@ const categories = [
   ['Frein-filets','Choisir la bonne résistance et le bon usage.','/comparatifs/']
 ];
 const features = [
-  ['Guide','Nettoyant frein : lequel choisir ?','Les critères essentiels pour comparer formats, séchage, résidus et usage professionnel.'],
-  ['Comparatif','WD-40 ou dégrippant professionnel ?','Comprendre les différences entre produit multifonction et dégrippant spécialisé.'],
-  ['Guide','Nettoyant contact électrique : comment choisir ?','Compatibilité, séchage, résidus et bonnes pratiques pour l’atelier.']
+  ['Guide','Nettoyant frein : lequel choisir ?','Les critères essentiels pour comparer formats, séchage, résidus et usage professionnel.','/guides/'],
+  ['Comparatif','WD-40 ou dégrippant professionnel ?','Comprendre les différences entre produit multifonction et dégrippant spécialisé.','/comparatifs/'],
+  ['Guide','Nettoyant contact électrique : comment choisir ?','Compatibilité, séchage, résidus et bonnes pratiques pour l’atelier.','/guides/']
 ];
 ---
 <BaseLayout
@@ -56,7 +56,7 @@ const features = [
       <div class="eyebrow">À la une</div>
       <h2>Premiers dossiers</h2>
       <div class="grid">
-        {features.map(([tag,title,text]) => <article class="card"><div class="tag">{tag}</div><h3>{title}</h3><p>{text}</p><a href="/guides/" style="font-weight:800;color:var(--orange)">Découvrir →</a></article>)}
+        {features.map(([tag,title,text,href]) => <article class="card"><div class="tag">{tag}</div><h3>{title}</h3><p>{text}</p><a href={href} style="font-weight:800;color:var(--orange)">Découvrir →</a></article>)}
       </div>
     </div>
   </section>
