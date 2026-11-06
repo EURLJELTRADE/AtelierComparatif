@@ -1,6 +1,40 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const brands = [
+  ['GRAFEN','Produits techniques pour l’entretien, le nettoyage, la lubrification et la maintenance.','Nettoyants frein, dégrippants, contacts, frein-filets'],
+  ['WD-40','Marque connue pour ses produits multifonctions et ses gammes spécialisées.','Multifonctions, dégrippants, moto, lubrification'],
+  ['Bardahl','Marque présente dans l’entretien automobile, les additifs et les produits techniques.','Entretien auto, nettoyage, additifs'],
+  ['Würth','Gamme professionnelle très large pour l’automobile, l’industrie et l’atelier.','Nettoyants, lubrifiants, chimie atelier'],
+  ['Motul','Marque fortement implantée dans les lubrifiants et l’entretien auto-moto.','Lubrifiants, entretien moto, nettoyants'],
+  ['Liqui Moly','Spécialiste allemand des lubrifiants, additifs et produits d’entretien.','Huiles, additifs, entretien'],
+  ['CRC','Marque orientée maintenance, nettoyage et protection technique.','Nettoyants, maintenance, protection'],
+  ['Loctite','Référence des adhésifs techniques, étanchéité et assemblages filetés.','Frein-filets, adhésifs, étanchéité']
+];
 ---
-<BaseLayout title="Marques de produits auto et atelier | AtelierComparatif.fr" description="Retrouvez les principales marques de produits d’entretien automobile, mécanique et atelier.">
-<section class="section"><div class="wrap"><div class="eyebrow">Marques</div><h1 style="font-size:48px">Comparer les marques sans parti pris.</h1><p class="lead">GRAFEN, WD-40, Bardahl, Würth, Motul, Liqui Moly, CRC, Loctite et d’autres marques seront analysées selon les mêmes critères.</p></div></section>
+<BaseLayout title="Marques de produits auto et atelier | AtelierComparatif.fr" description="Retrouvez les principales marques de produits d’entretien automobile, mécanique et atelier analysées selon des critères homogènes.">
+<section class="section brand-directory">
+  <div class="wrap">
+    <div class="section-kicker">Marques</div>
+    <h1>Comparer les marques sans parti pris.</h1>
+    <p class="lead">AtelierComparatif analyse des fabricants connus du marché auto, moto, maintenance et atelier. Une marque n’est jamais considérée meilleure par principe : nous comparons les références, les usages et la documentation disponible.</p>
+    <div class="brand-directory-grid">
+      {brands.map(([name,desc,scope]) => (
+        <article class="brand-directory-card">
+          <div class="brand-monogram">{name.slice(0,2).toUpperCase()}</div>
+          <div>
+            <h2>{name}</h2>
+            <p>{desc}</p>
+            <small>{scope}</small>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="editorial-note">
+      <h2>Notre méthode d’analyse des marques</h2>
+      <p>Nous distinguons les données publiées par les fabricants, nos analyses documentaires et les éventuels tests physiques. Un partenariat commercial n’accorde aucun avantage dans le classement éditorial.</p>
+      <a class="text-link" href="/a-propos/">En savoir plus sur AtelierComparatif →</a>
+    </div>
+  </div>
+</section>
 </BaseLayout>
