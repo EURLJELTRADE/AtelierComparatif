@@ -13,6 +13,15 @@ const guides = (await getCollection('guides')).sort(
       <h1>Comprendre avant de choisir.</h1>
       <p class="lead">Nettoyants, lubrifiants, produits électriques, frein-filets et consommables : nos guides expliquent les usages, les différences et les précautions.</p>
 
+      <div class="topic-shortcuts">
+        <a href="/dossiers/freinage/">Freinage</a>
+        <a href="/dossiers/degrippage/">Dégrippage & corrosion</a>
+        <a href="/dossiers/electricite/">Électricité</a>
+        <a href="/dossiers/moteur/">Moteur & admission</a>
+        <a href="/dossiers/lubrification/">Lubrification</a>
+        <a href="/dossiers/assemblage/">Assemblage</a>
+      </div>
+
       <div class="guide-list">
         {guides.map((guide) => (
           <a class="guide-list-card" href={'/guides/' + guide.id + '/'}>
