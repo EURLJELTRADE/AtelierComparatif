@@ -12,6 +12,18 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 const { Content, headings } = await render(guide);
+const allGuides = await getCollection('guides');
+const allComparatifs = await getCollection('comparatifs');
+const contentMap = new Map([
+  ...allGuides.map((item) => ['/guides/' + item.id + '/', { title: item.data.title, excerpt: item.data.excerpt, href: '/guides/' + item.id + '/' }]),
+  ...allComparatifs.map((item) => ['/comparatifs/' + item.id + '/', { title: item.data.title, excerpt: item.data.excerpt, href: '/comparatifs/' + item.id + '/' }])
+]);
+const explicitRelated = (guide.data.related ?? []).map((href) => contentMap.get(href)).filter(Boolean);
+const fallbackRelated = allGuides
+  .filter((item) => item.id !== guide.id)
+  .slice(0, 3)
+  .map((item) => ({ title: item.data.title, excerpt: item.data.excerpt, href: '/guides/' + item.id + '/' }));
+const relatedItems = (explicitRelated.length ? explicitRelated : fallbackRelated).slice(0, 3);
 const url = new URL('/guides/' + guide.id + '/', Astro.site);
 const published = guide.data.date.toISOString();
 const modified = (guide.data.updated ?? guide.data.date).toISOString();
@@ -86,6 +98,22 @@ const breadcrumbLd = {
           </nav>
         </aside>
       </div>
+
+      {relatedItems.length > 0 && (
+        <section class="article-related">
+          <div class="section-kicker">À lire ensuite</div>
+          <h2>Compléter ce guide</h2>
+          <div class="article-related-grid">
+            {relatedItems.map((item) => (
+              <a class="article-related-card" href={item.href}>
+                <strong>{item.title}</strong>
+                <span>{item.excerpt}</span>
+                <em>Lire →</em>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   </article>
 </BaseLayout>
