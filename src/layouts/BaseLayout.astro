@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+const {
+  title = 'AtelierComparatif.fr — Guides, tests et comparatifs pour l’atelier',
+  description = 'Guides, tests indépendants et comparatifs de produits pour l’entretien automobile, la mécanique et l’atelier.',
+  canonical,
+  image = '/og-default.jpg',
+  type = 'website'
+} = Astro.props;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site) : Astro.url;
+const org = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AtelierComparatif.fr",
+  "url": "https://ateliercomparatif.fr/"
+};
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AtelierComparatif.fr",
+  "url": "https://ateliercomparatif.fr/",
+  "inLanguage": "fr-FR"
+};
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify(org)} />
+  <script type="application/ld+json" set:html={JSON.stringify(website)} />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="/">Atelier<span>Comparatif</span>.fr</a>
+      <nav class="links" aria-label="Navigation principale">
+        <a href="/guides/">Guides</a>
+        <a href="/comparatifs/">Comparatifs</a>
+        <a href="/tests/">Tests</a>
+        <a href="/marques/">Marques</a>
+        <a href="/conseils-atelier/">Conseils atelier</a>
+      </nav>
+    </div>
+  </header>
+  <main><slot /></main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><strong>AtelierComparatif.fr</strong><br/>Guides, tests et comparatifs pour mieux choisir.</div>
+      <div><a href="/a-propos/">À propos</a> · <a href="/mentions-legales/">Mentions légales</a> · <a href="/contact/">Contact</a></div>
+    </div>
+  </footer>
+</body>
+</html>
