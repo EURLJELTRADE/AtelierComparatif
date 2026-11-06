@@ -5,7 +5,7 @@ description: "Nettoyant pneus, brillant ou protection : découvrez les différen
 excerpt: "Tous les produits pour pneus n’ont pas la même fonction : certains nettoient, d’autres modifient surtout l’aspect visuel."
 date: 2026-11-06
 category: "Guide"
-readingTime: "7 min"
+readingTime: "10 min"
 image: "https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&fit=crop&w=1400&q=84"
 imageAlt: "Pneu automobile en entretien"
 related:
@@ -51,6 +51,71 @@ La durée du rendu varie selon le produit, la météo et l’usage du véhicule.
 ### Compatibilité
 
 Le produit doit être prévu pour les flancs de pneus et ne pas être appliqué sur la bande de roulement.
+
+## Pourquoi nettoyer avant d’appliquer un produit de finition ?
+
+Une finition appliquée sur un flanc sale peut donner un résultat irrégulier et moins durable.
+
+Poussières, anciens dressings et salissures routières peuvent empêcher le produit de se répartir uniformément.
+
+Le nettoyage préalable n’est donc pas seulement esthétique : il prépare la surface.
+
+## Aspect brillant ou satiné : quelle différence ?
+
+Le choix est principalement visuel.
+
+Un brillant pneus donne généralement un aspect plus « mouillé » ou plus profond.
+
+Un produit satiné cherche un rendu plus proche d’un pneu neuf.
+
+Aucun de ces rendus n’est intrinsèquement meilleur : c’est une préférence esthétique.
+
+## Produit à base d’eau ou de solvants ?
+
+Les formulations diffèrent selon les marques.
+
+Certaines finitions utilisent une base aqueuse, d’autres des solvants.
+
+Cette différence peut influencer le séchage, le rendu, la durabilité et la compatibilité avec certaines surfaces.
+
+## Pourquoi ne jamais appliquer sur la bande de roulement ?
+
+La bande de roulement doit conserver son adhérence.
+
+Un film gras ou brillant sur cette zone pourrait réduire la friction disponible.
+
+Les produits d’entretien sont donc destinés aux **flancs**, sauf indication très spécifique du fabricant.
+
+## Que regarder dans un comparatif ?
+
+| Critère | Ce que cela change |
+| --- | --- |
+| Type de finition | Mat, satiné ou brillant |
+| Application | Aérosol, spray, gel |
+| Temps de séchage | Risque de projections |
+| Tenue | Fréquence de réapplication |
+| Résistance à la pluie | Durabilité extérieure |
+| Compatibilité | Type de caoutchouc et surfaces voisines |
+
+## Les erreurs courantes
+
+### Appliquer trop de produit
+
+Une couche excessive peut provoquer coulures ou projections.
+
+### Ne pas nettoyer le pneu
+
+Cela réduit l’uniformité du résultat.
+
+### Confondre esthétique et protection
+
+Un aspect très brillant ne signifie pas nécessairement une meilleure protection.
+
+### Utiliser le produit sur la jante
+
+Un produit formulé pour le caoutchouc n’est pas automatiquement adapté à une jante peinte ou vernie.
+
+
 
 ## À retenir
 

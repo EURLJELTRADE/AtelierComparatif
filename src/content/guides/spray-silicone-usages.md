@@ -5,7 +5,7 @@ description: "Découvrez les usages d’un spray silicone pour lubrifier, proté
 excerpt: "Le silicone est utile pour certains joints, plastiques et mécanismes, mais il n’est pas adapté à toutes les surfaces."
 date: 2026-11-06
 category: "Guide"
-readingTime: "7 min"
+readingTime: "10 min"
 image: "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&fit=crop&w=1400&q=84"
 imageAlt: "Entretien de pièces et surfaces automobiles"
 related:
@@ -53,6 +53,61 @@ Regardez notamment :
 - type de pulvérisation ;
 - tenue du film ;
 - présence éventuelle de solvants.
+
+## Pourquoi le silicone glisse-t-il aussi bien ?
+
+Les fluides silicone présentent un faible coefficient de friction sur de nombreuses surfaces.
+
+Ils peuvent donc former un film léger qui facilite le glissement sans nécessiter une graisse épaisse.
+
+C’est précisément ce qui les rend intéressants sur certains joints, glissières et mécanismes légers.
+
+## Silicone et caoutchouc
+
+Le spray silicone est souvent utilisé sur les joints de portes ou certaines pièces en caoutchouc.
+
+Mais tous les élastomères ne réagissent pas de la même manière.
+
+Il faut donc vérifier la compatibilité lorsque le matériau est critique.
+
+## Silicone et plastique
+
+Sur certaines surfaces plastiques, le silicone peut améliorer le glissement et l’aspect.
+
+Mais là encore, le type exact de polymère compte.
+
+Un plastique technique, un PVC souple et un polycarbonate ne doivent pas être considérés comme équivalents.
+
+## Pourquoi les carrossiers se méfient-ils du silicone ?
+
+Le silicone peut contaminer une surface destinée à être peinte.
+
+Même de très petites quantités peuvent favoriser des défauts de peinture.
+
+Dans un environnement carrosserie, l’usage des sprays silicone doit donc être maîtrisé et parfois totalement évité dans certaines zones.
+
+## Silicone, PTFE ou graisse : comment choisir ?
+
+| Produit | Usage typique |
+| --- | --- |
+| Silicone | Plastiques, joints, glissement léger |
+| PTFE | Frottements secs ou mécanismes précis selon formule |
+| Graisse | Charges plus importantes et lubrification durable |
+| Huile légère | Mécanismes mobiles peu chargés |
+
+## Les critères à comparer
+
+Au-delà du prix, regardez :
+
+- température d’utilisation ;
+- matériaux compatibles ;
+- type de film ;
+- volatilité ;
+- présence de solvants ;
+- précision du spray ;
+- tenue dans le temps.
+
+
 
 ## À retenir
 
