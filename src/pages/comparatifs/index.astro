@@ -1,6 +1,31 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const comparatifs = (await getCollection('comparatifs')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
-<BaseLayout title="Comparatifs produits auto et atelier | AtelierComparatif.fr" description="Comparatifs de produits d’entretien automobile et d’atelier selon leurs caractéristiques, usages et formats.">
-<section class="section"><div class="wrap"><div class="eyebrow">Comparatifs</div><h1 style="font-size:48px">Comparer les produits sur les bons critères.</h1><p class="lead">Des comparatifs structurés pour distinguer les différences techniques, les formats, les usages et les limites des principales solutions du marché.</p></div></section>
+<BaseLayout title="Comparatifs produits auto et atelier | AtelierComparatif.fr" description="Comparatifs structurés de produits d’entretien automobile et d’atelier selon leurs caractéristiques, usages, formats et limites.">
+  <section class="section guide-index">
+    <div class="wrap">
+      <div class="section-kicker">Comparatifs</div>
+      <h1>Comparer les produits sur les bons critères.</h1>
+      <p class="lead">Nous comparons les références du marché sur des critères homogènes, en distinguant clairement les données fabricants des tests réellement effectués.</p>
+
+      <div class="guide-list">
+        {comparatifs.map((item) => (
+          <a class="guide-list-card" href={'/comparatifs/' + item.id + '/'}>
+            {item.data.image && <img src={item.data.image} alt={item.data.imageAlt ?? item.data.title} width="720" height="480" loading="lazy" />}
+            <div>
+              <span class="guide-type">{item.data.category}</span>
+              <h2>{item.data.title}</h2>
+              <p>{item.data.excerpt}</p>
+              <small>{item.data.readingTime} de lecture</small>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>
