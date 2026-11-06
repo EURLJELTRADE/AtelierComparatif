@@ -48,7 +48,10 @@ Les URLs utilisent systématiquement un trailing slash afin de conserver une pol
 Photos de la homepage issues de Pexels et utilisées conformément à la licence Pexels :
 - Hero atelier : Andrea Piacquadio — photo 3855223
 - Freinage : Gustavo Fring — photo 6870299
-- Moteur : Sergei Starostin — photo 29181490
-- Outillage atelier : Tahamie Farooqui — photo 28641472
+- Dégrippants : Eve R — photo 37241200
+- Électricité / batterie : Vladimir Srajber — photo 32282232
+- Frein-filets / visserie : Dan Cristian Pădureț — photo 9966689
+- Nettoyage moteur : cottonbro studio — photo 7565174
+- Antirouille / corrosion : Avak Ava — photo 31840105
 
-Ces visuels sont génériques et ne représentent aucun produit de marque.
+Les visuels de rubrique doivent représenter directement la pièce, le problème ou l’usage concerné.
