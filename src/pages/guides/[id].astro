@@ -38,6 +38,11 @@ const articleLd = {
   inLanguage: 'fr-FR',
   mainEntityOfPage: url.toString(),
   image: guide.data.image ? [guide.data.image] : undefined,
+  author: {
+    '@type': 'Organization',
+    name: 'Rédaction AtelierComparatif.fr',
+    url: 'https://ateliercomparatif.fr/a-propos/'
+  },
   publisher: {
     '@type': 'Organization',
     name: 'AtelierComparatif.fr',
@@ -74,7 +79,10 @@ const breadcrumbLd = {
         <h1>{guide.data.title}</h1>
         <p class="article-excerpt">{guide.data.excerpt}</p>
         <div class="article-meta">
-          <span>{guide.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          <span>Par <a href="/a-propos/">Rédaction AtelierComparatif.fr</a></span>
+          <span>•</span>
+          <span>Publié le {guide.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          {guide.data.updated && <><span>•</span><span>Mis à jour le {guide.data.updated.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span></>}
           <span>•</span>
           <span>{guide.data.readingTime} de lecture</span>
         </div>
