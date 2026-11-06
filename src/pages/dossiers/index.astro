@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { topics } from '../../data/topics';
+---
+<BaseLayout title="Dossiers entretien auto et atelier | AtelierComparatif.fr" description="Explorez nos dossiers thématiques : freinage, dégrippage, électricité, moteur, lubrification et assemblage.">
+<section class="section">
+  <div class="wrap">
+    <div class="section-kicker">Dossiers</div>
+    <h1>Explorer par besoin d’atelier.</h1>
+    <p class="lead">Chaque dossier regroupe guides, comparatifs et pages de marque autour d’une même problématique technique.</p>
+    <div class="topic-index-grid">
+      {Object.entries(topics).map(([slug,topic]) => (
+        <a class="topic-index-card" href={'/dossiers/' + slug + '/'}>
+          <span>Dossier</span>
+          <h2>{topic.name}</h2>
+          <p>{topic.description}</p>
+          <strong>Explorer →</strong>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+</BaseLayout>
