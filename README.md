@@ -41,3 +41,14 @@ Les URLs utilisent systématiquement un trailing slash afin de conserver une pol
   - des photos publiques récupérées depuis une source identifiable.
 - Conserver la source et vérifier les droits d'utilisation lorsque nécessaire.
 - Si aucun visuel fiable n'est disponible, laisser un emplacement neutre ou demander le visuel avant publication.
+
+
+## Sources visuelles V1
+
+Photos de la homepage issues de Pexels et utilisées conformément à la licence Pexels :
+- Hero atelier : Andrea Piacquadio — photo 3855223
+- Freinage : Gustavo Fring — photo 6870299
+- Moteur : Sergei Starostin — photo 29181490
+- Outillage atelier : Tahamie Farooqui — photo 28641472
+
+Ces visuels sont génériques et ne représentent aucun produit de marque.
