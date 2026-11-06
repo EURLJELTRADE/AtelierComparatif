@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const categories = [
+  ['Nettoyants frein','Guides, tests et comparatifs pour bien choisir.','/comparatifs/'],
+  ['Dégrippants','Produits multifonctions, pénétrants et antirouille.','/guides/'],
+  ['Électricité','Nettoyants contacts et entretien des connexions.','/guides/'],
+  ['Frein-filets','Choisir la bonne résistance et le bon usage.','/comparatifs/']
+];
+const features = [
+  ['Guide','Nettoyant frein : lequel choisir ?','Les critères essentiels pour comparer formats, séchage, résidus et usage professionnel.'],
+  ['Comparatif','WD-40 ou dégrippant professionnel ?','Comprendre les différences entre produit multifonction et dégrippant spécialisé.'],
+  ['Guide','Nettoyant contact électrique : comment choisir ?','Compatibilité, séchage, résidus et bonnes pratiques pour l’atelier.']
+];
+---
+<BaseLayout
+  title="AtelierComparatif.fr — Guides, tests et comparatifs pour l’atelier"
+  description="Comparez les produits d’entretien automobile et d’atelier : nettoyants frein, dégrippants, nettoyants contact, frein-filets et plus encore."
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Le guide indépendant de l’atelier</div>
+        <h1>Mieux choisir ses produits d’entretien et d’atelier.</h1>
+        <p>Guides pratiques, tests, comparatifs et méthodes pour comprendre les produits techniques avant de les acheter.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/comparatifs/">Voir les comparatifs</a>
+          <a class="btn btn-dark" href="/guides/">Consulter les guides</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="eyebrow" style="color:#f4b61c">Notre approche</div>
+        <h2 style="font-size:30px;margin:10px 0 8px">Comparer avant d’acheter.</h2>
+        <ul>
+          <li>Critères techniques expliqués simplement</li>
+          <li>Comparaison de plusieurs marques</li>
+          <li>Usages professionnels et particuliers</li>
+          <li>Limites et précautions clairement indiquées</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">Explorer</div>
+      <h2>Choisir par type de produit</h2>
+      <p class="lead">AtelierComparatif organise ses contenus par usage pour construire des dossiers complets et faciles à parcourir.</p>
+      <div class="category-grid">
+        {categories.map(([title,desc,href]) => <a class="category" href={href}>{title}<small>{desc}</small></a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <div class="eyebrow">À la une</div>
+      <h2>Premiers dossiers</h2>
+      <div class="grid">
+        {features.map(([tag,title,text]) => <article class="card"><div class="tag">{tag}</div><h3>{title}</h3><p>{text}</p><a href="/guides/" style="font-weight:800;color:var(--orange)">Découvrir →</a></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section method">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--yellow)">Méthodologie</div>
+      <h2>Un média utile avant d’être commercial.</h2>
+      <p class="lead">Nos contenus distinguent les données fabricants, les critères techniques, les usages possibles et les recommandations éditoriales. Les partenariats et liens commerciaux seront signalés lorsqu’ils existent.</p>
+      <div class="grid">
+        <div class="card"><h3>Comprendre</h3><p>Expliquer la fonction réelle d’un produit et les contraintes de son application.</p></div>
+        <div class="card"><h3>Comparer</h3><p>Mettre plusieurs solutions en regard avec des critères identiques et lisibles.</p></div>
+        <div class="card"><h3>Choisir</h3><p>Orienter vers le produit adapté à l’usage plutôt que vers une marque par défaut.</p></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
