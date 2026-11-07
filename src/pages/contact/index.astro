@@ -1,6 +1,88 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Contact | AtelierComparatif.fr" description="Contacter AtelierComparatif.fr pour une question éditoriale, une correction ou une proposition de produit à analyser." robots="noindex,follow">
-<section class="section"><div class="wrap"><div class="eyebrow">Contact</div><h1 style="font-size:48px">Nous contacter.</h1><p class="lead">Cette page accueillera les coordonnées éditoriales et le formulaire de contact lors de la mise en ligne définitive du site.</p></div></section>
+<BaseLayout
+  title="Contact | AtelierComparatif.fr"
+  description="Contactez la rédaction AtelierComparatif.fr pour une correction, une question éditoriale, une proposition de produit ou un partenariat."
+  canonical="/contact/"
+>
+<section class="section contact-page">
+  <div class="wrap contact-wrap">
+    <div class="section-kicker">Contact</div>
+    <h1>Contacter la rédaction.</h1>
+    <p class="lead">Une correction à signaler, un produit à proposer à l’analyse ou une question sur notre méthodologie ? Utilisez le formulaire ci-dessous.</p>
+
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h2>Pour quelles demandes ?</h2>
+        <div class="contact-reasons">
+          <article>
+            <strong>Correction éditoriale</strong>
+            <p>Une donnée technique, une caractéristique produit ou une information historique vous semble inexacte ou obsolète.</p>
+          </article>
+          <article>
+            <strong>Produit à analyser</strong>
+            <p>Fabricants, distributeurs et lecteurs peuvent nous signaler une référence pertinente pour un futur guide ou comparatif.</p>
+          </article>
+          <article>
+            <strong>Partenariat</strong>
+            <p>Nous étudions les propositions cohérentes avec notre ligne éditoriale. Un partenariat commercial n’influence pas nos conclusions.</p>
+          </article>
+          <article>
+            <strong>Question sur le site</strong>
+            <p>Vous pouvez également nous contacter au sujet de la méthodologie, d’un contenu ou du fonctionnement d’AtelierComparatif.fr.</p>
+          </article>
+        </div>
+
+        <div class="contact-note">
+          <strong>Transparence éditoriale</strong>
+          <p>Les produits proposés à la rédaction ne sont pas automatiquement publiés ni mieux classés. Lorsqu’un contenu résulte d’un partenariat ou d’un produit fourni, cela doit être indiqué clairement.</p>
+        </div>
+      </div>
+
+      <form
+        class="contact-form"
+        name="contact-ateliercomparatif"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/contact/merci/"
+      >
+        <input type="hidden" name="form-name" value="contact-ateliercomparatif" />
+        <p class="hidden-field">
+          <label>Ne pas remplir ce champ : <input name="bot-field" /></label>
+        </p>
+
+        <label>
+          Nom
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+
+        <label>
+          E-mail
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+
+        <label>
+          Motif
+          <select name="subject" required>
+            <option value="">Choisir un motif</option>
+            <option value="correction">Correction éditoriale</option>
+            <option value="produit">Proposer un produit</option>
+            <option value="partenariat">Partenariat</option>
+            <option value="question">Question générale</option>
+          </select>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="8" required></textarea>
+        </label>
+
+        <button type="submit" class="contact-submit">Envoyer le message</button>
+        <p class="form-help">Merci de ne pas transmettre de données sensibles ou confidentielles dans ce formulaire.</p>
+      </form>
+    </div>
+  </div>
+</section>
 </BaseLayout>
