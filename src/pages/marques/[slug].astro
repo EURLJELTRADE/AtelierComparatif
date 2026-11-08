@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { brands } from '../../data/brands';
+import { brandLogos } from '../../data/brandLogos';
 
 export function getStaticPaths() {
   return Object.entries(brands).map(([slug, brand]) => ({
@@ -36,6 +37,7 @@ const breadcrumbLd = {
 
       <header class="brand-hero">
         <div class="brand-hero-copy">
+          <div class="brand-page-logo"><img src={brandLogos[slug]} alt={'Logo ' + brand.name} loading="eager" /></div>
           <div class="section-kicker">Histoire de marque</div>
           <h1>{brand.name}</h1>
           <p class="brand-intro">{brand.excerpt}</p>
