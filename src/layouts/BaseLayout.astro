@@ -36,6 +36,31 @@ const website = {
     gtag('config', 'G-7MLBB7NW8C');
   </script>
   <!-- End Google Analytics 4 -->
+  <script is:inline>
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a[href]');
+      if (!link) return;
+
+      let url;
+      try {
+        url = new URL(link.href, window.location.href);
+      } catch {
+        return;
+      }
+
+      const hostname = url.hostname.replace(/^www\./, '');
+      if (hostname !== 'jelspray.fr') return;
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'jelspray_click', {
+          link_url: url.href,
+          link_text: (link.textContent || '').trim().slice(0, 100),
+          source_page: window.location.pathname
+        });
+      }
+    });
+  </script>
+  <!-- End JELSPRAY click tracking -->
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <title>{title}</title>
