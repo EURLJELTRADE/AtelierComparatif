@@ -32,4 +32,26 @@ for (const [name, source, ext] of sources) {
   await writeFile(target, Buffer.from(await response.arrayBuffer()));
 }
 
-console.log('Brand logos prepared locally.');
+
+const productSources = [
+  ['wd-40-product', 'https://down-br.img.susercontent.com/file/br-11134207-81z1k-mhhtk0pdglxe68', 'webp'],
+  ['bardahl-product', 'https://www.ravate.com/231689-large_default/nettoyant-degraissant-mecanique-freins-600ml-bardahl-4455.webp', 'webp'],
+  ['wurth-product', 'https://www.cranktech.co.za/cdn/shop/files/Screenshot2025-03-20074853.png?v=1742449746&width=990', 'png'],
+  ['grafen-product', 'https://grafenprofessional.nl/cdn/shop/products/RemmenreinigerKOB28821-Edit.jpg?v=1654684508', 'jpg'],
+  ['loctite-product', 'https://contentinfo.autozone.com/znetcs/product-info/en/US/ltc/1330906/image/8/', 'jpg'],
+  ['liqui-moly-product', 'https://ferrugensecompanhia.pt/674-large_default/agente-de-limpeza-rapida-liqui-moly.jpg', 'jpg'],
+  ['motul-product', 'https://opieoils-motul.co.uk/cdn/shop/files/motul-mc-care-p2-brake-clean-400ml-aerosol-1_b3686fdb-d90a-406c-a110-db344fb3c76a.jpg?v=1738238857&width=1200', 'jpg'],
+  ['crc-product', 'https://nascoop.com/_assets/images/items/CRC-05084.jpg', 'jpg']
+];
+
+for (const [name, source, ext] of productSources) {
+  const target = path.join(outDir, name + '.' + ext);
+  const response = await fetch(source, {
+    headers: { 'User-Agent': 'AtelierComparatif/1.0 (product asset localization)' },
+    redirect: 'follow'
+  });
+  if (!response.ok) throw new Error(`Failed to download ${name}: ${response.status}`);
+  await writeFile(target, Buffer.from(await response.arrayBuffer()));
+}
+
+console.log('Brand logos and product images prepared locally.');
