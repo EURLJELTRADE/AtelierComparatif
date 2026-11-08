@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { brandLogos } from '../../data/brandLogos';
 const brands = [
   ['GRAFEN Professional','grafen','Produits techniques pour l’entretien, le nettoyage, la lubrification et la maintenance.','Nettoyants frein, dégrippants, contacts, frein-filets'],
   ['WD-40','wd-40','Marque connue pour ses produits multifonctions et ses gammes spécialisées.','Multifonctions, dégrippants, moto, lubrification'],
@@ -20,7 +21,7 @@ const brands = [
     <div class="brand-directory-grid">
       {brands.map(([name,slug,desc,scope]) => (
         <a class="brand-directory-card" href={'/marques/' + slug + '/'}>
-          <div class="brand-monogram">{name.slice(0,2).toUpperCase()}</div>
+          <div class="brand-logo-card"><img src={brandLogos[slug]} alt={'Logo ' + name} loading="lazy" /></div>
           <div>
             <h2>{name}</h2>
             <p>{desc}</p>
