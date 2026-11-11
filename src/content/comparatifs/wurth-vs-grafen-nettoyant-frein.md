@@ -6,7 +6,7 @@ excerpt: "Deux références orientées atelier, avec un format proche mais une d
 date: 2026-11-06
 category: "Comparatif"
 readingTime: "10 min"
-image: "https://images.pexels.com/photos/6870299/pexels-photo-6870299.jpeg?auto=compress&fit=crop&w=1400&q=84"
+image: "/images/comparatifs/comparatif-nettoyants-freins-wurth-vs-grafen.webp"
 imageAlt: "Disque de frein automobile en maintenance"
 methodology: "Comparatif documentaire basé sur les informations fabricants disponibles en novembre 2026. Aucun classement de performance n’est attribué sans essai identique."
 ---
