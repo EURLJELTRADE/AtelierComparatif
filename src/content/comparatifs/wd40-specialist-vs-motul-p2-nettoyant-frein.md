@@ -6,7 +6,7 @@ excerpt: "Deux références orientées moto, deux approches proches mais pas ide
 date: 2026-11-06
 category: "Comparatif"
 readingTime: "10 min"
-image: "https://images.pexels.com/photos/6870299/pexels-photo-6870299.jpeg?auto=compress&fit=crop&w=1400&q=84"
+image: "/images/comparatifs/comparatif-nettoyants-freins-wd40-vs-motul.webp"
 imageAlt: "Intervention sur un système de freinage"
 methodology: "Comparatif documentaire basé sur les pages et fiches fabricants officielles consultées en novembre 2026. Aucun classement de performance n’est attribué sans test physique homogène."
 ---
