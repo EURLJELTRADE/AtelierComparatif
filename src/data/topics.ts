@@ -55,6 +55,9 @@ export const topics = {
       "/guides/lubrifiant-chaine-comment-choisir/",
       "/guides/spray-silicone-usages/",
       "/guides/graisse-cuivre-ceramique-differences/",
+      "/guides/graisse-lithium-vs-silicone/",
+      "/guides/lubrifiant-sec-ptfe-vs-silicone/",
+      "/guides/graisse-nlgi-2-ep2-comment-choisir/",
       "/guides/produits-indispensables-atelier/"
     ]
   },
